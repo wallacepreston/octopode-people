@@ -11,7 +11,7 @@ function App() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('http://localhost:3000/people')
       .then(res => res.json())
       .then(data => setPeople(data));
   }, []);
@@ -20,8 +20,7 @@ function App() {
     <div className='mt-4 mx-auto h-75 w-75'>
       <BrowserRouter>
         <div>
-          <Link to="/">Go back home</Link>
-          <Link to="/people">See people</Link>
+          <Link to="/">Home</Link> | <Link to="/people">People</Link>
         </div>
         <Routes>
           <Route path='/' element={<Home />} />
