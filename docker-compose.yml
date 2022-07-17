@@ -1,0 +1,15 @@
+# services lists the multiple different apps we want to run via docker
+# by default, any service can reach any other service at that service’s name
+services:
+
+  octo-api:
+    build: ./server
+    container_name: octo-api
+    ports:
+      - 3000:3000
+
+  octo-client:
+    build: ./client
+    container_name: octo-client
+    ports:
+      - 1234:1234
